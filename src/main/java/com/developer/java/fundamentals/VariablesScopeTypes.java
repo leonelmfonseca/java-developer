@@ -1,13 +1,24 @@
 package com.developer.java.fundamentals;
 
-public class VariablesScopeTypes {
+interface Displayable {
+  void display();
+
+  void modifyVariables(int delta);
+}
+
+enum VariableType {
+  STATIC,
+  INSTANCE,
+  LOCAL
+}
+
+public class VariablesScopeTypes implements Displayable {
 
   // Shared among all instances of the class.
-  private static int staticVariable=100;
+  private static int staticVariable = 100;
 
-  //Each instance (object) of the class has its own copy of these variables.
+  // Each instance (object) of the class has its own copy of these variables.
   private int instanceVariable = 2001;
-
 
   public static void main(String[] args) {
 
@@ -18,33 +29,59 @@ public class VariablesScopeTypes {
 
     // Display initial values
     System.out.println("Initial Values:");
-    System.out.println("Instance 1 - Instance Variable: " + instance1.instanceVariable);
-    System.out.println("Instance 2 - Instance Variable: " + instance2.instanceVariable);
+    instance1.display();
+    instance2.display();
     System.out.println("Static Variable: " + VariablesScopeTypes.staticVariable);
     System.out.println();
 
     // Modify instance variables and static variable
-    instance1.instanceVariable = 3001;
-    instance2.instanceVariable = 4001;
-    VariablesScopeTypes.staticVariable = 200;
+    instance1.modifyVariables(1000);
+    instance2.modifyVariables(2000);
+    modifyStaticVariable(15);
 
     // Display modified values
     System.out.println("Modified Values:");
-    System.out.println("Instance 1 - Instance Variable: " + instance1.instanceVariable);
-    System.out.println("Instance 2 - Instance Variable: " + instance2.instanceVariable);
+    instance1.display();
+    instance2.display();
     System.out.println("Static Variable: " + VariablesScopeTypes.staticVariable);
     System.out.println();
 
-    // Demonstrate local variables
+    // Demonstrate local variables and Enums
     instance1.localVariableMethod();
     instance2.localVariableMethod();
+
+    // Demonstrate Enum usage
+    for (VariableType type : VariableType.values()) {
+      System.out.println("VariableType: " + type);
+    }
+
+    // Demonstrate Arrays
+    System.out.println();
+    System.out.println("Array of Instance Variables:");
+    VariablesScopeTypes[] instances = {instance1, instance2};
+    for (VariablesScopeTypes instance : instances) {
+      instance.display();
+    }
+  }
+
+  @Override
+  public void display() {
+    System.out.println("Instance Variable: " + instanceVariable);
+  }
+
+  @Override
+  public void modifyVariables(int delta) {
+    this.instanceVariable += delta; // Modify instance variable
+  }
+
+  public static void modifyStaticVariable(int delta) {
+    staticVariable += delta;
   }
 
   void localVariableMethod() {
-
     // Only accessible within the method or block where they are declared
     int localVariable = 50;
-    System.out.println("Local Variable in " + this + ": "+ localVariable);
+    System.out.println("Local Variable in " + this.toString() + ": " + localVariable);
   }
 
   // Prevents that default implementation of the toString() method from the Object class,
@@ -53,7 +90,4 @@ public class VariablesScopeTypes {
   public String toString() {
     return "VariablesScopeTypes instance";
   }
-
 }
-
-
