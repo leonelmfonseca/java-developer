@@ -1,6 +1,6 @@
 package com.developer.java.fundamentals;
 
-public class JavaVariablesDataTypes {
+public class VariablesDataTypes {
 
   // Boolean
   private static boolean bl;
