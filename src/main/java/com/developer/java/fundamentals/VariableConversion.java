@@ -34,7 +34,6 @@ public class VariableConversion {
     unboxingConversion();
     objectConversion();
     arrayConversion();
-
   }
 
   // A smaller primitive data type is converted to a larger primitive data type.
@@ -67,7 +66,8 @@ public class VariableConversion {
   }
 
   // Converting between different reference types (like class instances).
-  // In object-oriented programming (OOP), polymorphism allows objects of different types (such as Dog and Cat)
+  // In object-oriented programming (OOP), polymorphism allows objects of different types (such as
+  // Dog and Cat)
   // to be treated as instances of a common superclass (such as Animal).
   public static void upcastingConversion() {
 
@@ -78,10 +78,13 @@ public class VariableConversion {
     System.out.println(animal);
   }
 
-  // The cast (Dog) tells the compiler that you are explicitly treating the animal reference as a Dog reference,
+  // The cast (Dog) tells the compiler that you are explicitly treating the animal reference as a
+  // Dog reference,
   // even though it is of type Animal.
-  // Downcasting can be risky, and it only works if the object is indeed an instance of the subclass (Dog).
-  // If you try to cast an object to a subclass that it doesn't belong to, you will get a ClassCastException at runtime
+  // Downcasting can be risky, and it only works if the object is indeed an instance of the subclass
+  // (Dog).
+  // If you try to cast an object to a subclass that it doesn't belong to, you will get a
+  // ClassCastException at runtime
   public static void downcastingConversion() {
     printTitle("Downcasting");
     Animal animal = new Dog();
@@ -111,7 +114,6 @@ public class VariableConversion {
     System.out.println("Converted primitive into String: " + newNumStr);
   }
 
-
   // Manual process of converting a primitive type to its corresponding wrapper class.
   // This process involves explicitly creating an object that wraps the primitive value.
   public static void boxingConversion() {
@@ -123,11 +125,10 @@ public class VariableConversion {
 
     System.out.println("Primitive int: " + primitiveInt);
     System.out.println("Boxed Integer: " + boxedInt);
-
-
   }
 
-  // Automatic conversion performed by the Java compiler when it sees that a primitive value needs to be converted
+  // Automatic conversion performed by the Java compiler when it sees that a primitive value needs
+  // to be converted
   // into a wrapper class. J
   // Java automatically "boxes" the primitive type into its corresponding wrapper class,
   // without requiring you to explicitly create an object.
@@ -139,22 +140,19 @@ public class VariableConversion {
     Integer autoboxedInt = primitiveInt; // Autoboxing happens automatically
     System.out.println("Primitive int: " + primitiveInt);
     System.out.println("Autoboxed Integer: " + autoboxedInt);
-
   }
 
   // An object of a wrapper class is converted back into a primitive type
   public static void unboxingConversion() {
-    Integer boxedInt = 10;  // Boxing (autoboxing)
+    Integer boxedInt = 10; // Boxing (autoboxing)
 
     // Unboxing: converting Integer to primitive int
-    int primitiveInt = boxedInt;  // Unboxing happens automatically
+    int primitiveInt = boxedInt; // Unboxing happens automatically
     printTitle("Unboxing");
     printTableHeader();
 
     System.out.println("Boxed Integer: " + boxedInt);
     System.out.println("Primitive int: " + primitiveInt);
-
-
   }
 
   // Creates a list of objects and attempts to cast each element to a String.
@@ -168,17 +166,17 @@ public class VariableConversion {
     List<Object> objectList = new ArrayList<>();
     objectList.add("Hello");
     objectList.add("World");
-    objectList.add(123);  // Integer object
+    objectList.add(123); // Integer object
 
     // Convert List<Object> to List<String> (using String.valueOf for safe conversion)
     List<String> stringList = convertListToStringList(objectList);
     System.out.println("Converted List<Object> to List<String>: " + stringList);
   }
 
-
   // To convert an int[] to an Integer[], you must manually box each element
   // since primitive types can't be stored in arrays of wrapper types.
-  // This involves iterating over the int[] and using Integer.valueOf(int) to create an Integer object for each element.
+  // This involves iterating over the int[] and using Integer.valueOf(int) to create an Integer
+  // object for each element.
   // The result is an array of Integer objects that mirrors the original int[].
   public static void arrayConversion() {
     printTitle("Array Conversion (int[] to Integer[])");
@@ -210,12 +208,11 @@ public class VariableConversion {
     List<String> stringList = new ArrayList<>();
     for (Object obj : objectList) {
       // Convert any object to String using String.valueOf, which handles nulls safely
-      stringList.add(String.valueOf(obj)); // Converts non-String objects to their String representation
+      stringList.add(
+          String.valueOf(obj)); // Converts non-String objects to their String representation
     }
     return stringList;
   }
-
-
 
   public static String getPrimitiveName(Object obj) {
     if (obj instanceof Integer) {

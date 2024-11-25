@@ -47,6 +47,7 @@ public class VariablesDataTypes {
     System.out.println("Default float value: " + fl);
     System.out.println("Default double value: " + d);
   }
+
   private static void printDataTypesComparisonTable() {
     System.out.println("+-------------------+--------------------------------------------------------+---------------------------------------------------+");
     System.out.println("| Feature           | Primitive Types                                         | Non-Primitive Types (Reference Types)             |");
