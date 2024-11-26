@@ -81,7 +81,7 @@ public class ScopeTypes implements Displayable {
   void localVariableMethod() {
     // Only accessible within the method or block where they are declared
     int localVariable = 50;
-    System.out.println("Local Variable in " + this.toString() + ": " + localVariable);
+    System.out.println("Local Variable in " + this + ": " + localVariable);
   }
 
   // Prevents that default implementation of the toString() method from the Object class,
