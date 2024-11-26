@@ -6,7 +6,6 @@ public class VariablesDataTypes {
   private static boolean bl;
 
   // Numeric(signed)
-  private static char ch; // character
   private static long lg; // Integral -> Integer
   private static int ig; // Integral -> Integer
   private static short st; // Integral -> Integer
