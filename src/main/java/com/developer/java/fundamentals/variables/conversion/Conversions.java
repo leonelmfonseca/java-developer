@@ -19,7 +19,7 @@ class Dog extends Animal {
   }
 }
 
-public class VariableConversion {
+public class Conversions {
 
   public static void main(String[] args) {
     wideningConversion();
@@ -240,7 +240,7 @@ public class VariableConversion {
     printTableHeader();
     System.out.println(buildNumberTypeMapping(values));
     System.out.println();
-    Stream.of(values).forEach(VariableConversion::printWithLeadingZeros);
+    Stream.of(values).forEach(Conversions::printWithLeadingZeros);
   }
 
   // Builds a mapping of types in "type1 -> type2 -> ..." format
