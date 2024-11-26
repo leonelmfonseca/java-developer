@@ -4,15 +4,10 @@ import com.developer.java.fundamentals.variables.datatypes.enums.Scrum.StoryStat
 import java.util.OptionalInt;
 import java.util.Random;
 import java.util.stream.IntStream;
-import java.lang.System;
 
 public class Enumerations {
 
-  private static final Random random;
-
-  static {
-    random = new Random();
-  }
+  private static final Random random = new Random();
 
   private static final int TRANSITIONS = 10;
 
@@ -50,7 +45,8 @@ public class Enumerations {
             + " status ("
             + currentStatus.getName().toUpperCase()
             + " -> "
-            + nextStoryStatus.getName().toUpperCase()+")");
+            + nextStoryStatus.getName().toUpperCase()
+            + ")");
     System.out.println();
   }
 
