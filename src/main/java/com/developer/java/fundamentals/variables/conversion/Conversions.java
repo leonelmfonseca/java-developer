@@ -1,4 +1,4 @@
-package com.developer.java.fundamentals;
+package com.developer.java.fundamentals.variables.conversion;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,10 @@
-package com.developer.java.fundamentals;
+package com.developer.java.fundamentals.parameterpassing;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public class PassByValueNotByReference {
+public class MethodParameterPassingValueReference {
 
   private static final Map<Owner, Car> carOwnerCollection = new HashMap<>();
 

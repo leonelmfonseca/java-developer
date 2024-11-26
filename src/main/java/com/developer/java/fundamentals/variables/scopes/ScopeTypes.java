@@ -1,4 +1,4 @@
-package com.developer.java.fundamentals;
+package com.developer.java.fundamentals.variables.scopes;
 
 interface Displayable {
   void display();
@@ -12,7 +12,7 @@ enum VariableType {
   LOCAL
 }
 
-public class VariablesScopeTypes implements Displayable {
+public class ScopeTypes implements Displayable {
 
   // Shared among all instances of the class.
   private static int staticVariable = 100;
@@ -24,14 +24,14 @@ public class VariablesScopeTypes implements Displayable {
 
     // instance1 and instance2 will be held in the stack,
     // as references to objects in the heap
-    VariablesScopeTypes instance1 = new VariablesScopeTypes();
-    VariablesScopeTypes instance2 = new VariablesScopeTypes();
+    ScopeTypes instance1 = new ScopeTypes();
+    ScopeTypes instance2 = new ScopeTypes();
 
     // Display initial values
     System.out.println("Initial Values:");
     instance1.display();
     instance2.display();
-    System.out.println("Static Variable: " + VariablesScopeTypes.staticVariable);
+    System.out.println("Static Variable: " + ScopeTypes.staticVariable);
     System.out.println();
 
     // Modify instance variables and static variable
@@ -43,7 +43,7 @@ public class VariablesScopeTypes implements Displayable {
     System.out.println("Modified Values:");
     instance1.display();
     instance2.display();
-    System.out.println("Static Variable: " + VariablesScopeTypes.staticVariable);
+    System.out.println("Static Variable: " + ScopeTypes.staticVariable);
     System.out.println();
 
     // Demonstrate local variables and Enums
@@ -58,8 +58,8 @@ public class VariablesScopeTypes implements Displayable {
     // Demonstrate Arrays
     System.out.println();
     System.out.println("Array of Instance Variables:");
-    VariablesScopeTypes[] instances = {instance1, instance2};
-    for (VariablesScopeTypes instance : instances) {
+    ScopeTypes[] instances = {instance1, instance2};
+    for (ScopeTypes instance : instances) {
       instance.display();
     }
   }
